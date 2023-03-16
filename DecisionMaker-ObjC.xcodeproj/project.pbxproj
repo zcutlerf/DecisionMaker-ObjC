@@ -14,6 +14,8 @@
 		5D4152DA29BF682D008CD441 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D4152D929BF682D008CD441 /* Assets.xcassets */; };
 		5D4152DD29BF682D008CD441 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D4152DB29BF682D008CD441 /* LaunchScreen.storyboard */; };
 		5D4152E029BF682D008CD441 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4152DF29BF682D008CD441 /* main.m */; };
+		5DF6A9D529C344C1002A09F6 /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF6A9D329C344C1002A09F6 /* TextFieldTableViewCell.m */; };
+		5DF6A9D629C344C1002A09F6 /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DF6A9D429C344C1002A09F6 /* TextFieldTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,9 @@
 		5D4152DC29BF682D008CD441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D4152DE29BF682D008CD441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D4152DF29BF682D008CD441 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5DF6A9D229C344C1002A09F6 /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
+		5DF6A9D329C344C1002A09F6 /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
+		5DF6A9D429C344C1002A09F6 /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +73,9 @@
 				5D4152D329BF682C008CD441 /* ViewController.h */,
 				5D4152D429BF682C008CD441 /* ViewController.m */,
 				5D4152D629BF682C008CD441 /* Main.storyboard */,
+				5DF6A9D229C344C1002A09F6 /* TextFieldTableViewCell.h */,
+				5DF6A9D329C344C1002A09F6 /* TextFieldTableViewCell.m */,
+				5DF6A9D429C344C1002A09F6 /* TextFieldTableViewCell.xib */,
 				5D4152D929BF682D008CD441 /* Assets.xcassets */,
 				5D4152DB29BF682D008CD441 /* LaunchScreen.storyboard */,
 				5D4152DE29BF682D008CD441 /* Info.plist */,
@@ -136,6 +144,7 @@
 				5D4152DD29BF682D008CD441 /* LaunchScreen.storyboard in Resources */,
 				5D4152DA29BF682D008CD441 /* Assets.xcassets in Resources */,
 				5D4152D829BF682C008CD441 /* Main.storyboard in Resources */,
+				5DF6A9D629C344C1002A09F6 /* TextFieldTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +159,7 @@
 				5D4152CF29BF682C008CD441 /* AppDelegate.m in Sources */,
 				5D4152E029BF682D008CD441 /* main.m in Sources */,
 				5D4152D229BF682C008CD441 /* SceneDelegate.m in Sources */,
+				5DF6A9D529C344C1002A09F6 /* TextFieldTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,11 +6,11 @@
 //
 
 #import "ViewController.h"
+#import "TextFieldTableViewCell.h"
 
 @interface ViewController ()
 
 @property NSArray<NSString*>* mentors;
-@property UITextField* textField;
 
 @end
 
@@ -33,23 +33,21 @@
     [tableView.bottomAnchor constraintEqualToAnchor: (self.view).bottomAnchor].active = true;
     [tableView.trailingAnchor constraintEqualToAnchor: (self.view).trailingAnchor].active = true;
     
-    _textField = [[UITextField alloc] init];
-    _textField.delegate = self;
-    _textField.translatesAutoresizingMaskIntoConstraints = false;
+    [tableView registerNib: [UINib nibWithNibName:@"TextFieldTableViewCell" bundle:nil] forCellReuseIdentifier:@"textFieldCell"];
 }
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
     if(indexPath.row == _mentors.count) {
-        [cell addSubview:_textField];
-//        [_textField.topAnchor constraintEqualToAnchor: cell.topAnchor].active = true;
-//        [_textField.leadingAnchor constraintEqualToAnchor: cell.leadingAnchor].active = true;
-//        [_textField.bottomAnchor constraintEqualToAnchor: cell.bottomAnchor].active = true;
-//        [_textField.trailingAnchor constraintEqualToAnchor: cell.trailingAnchor].active = true;
-        _textField.backgroundColor = [UIColor blueColor];
-        return cell;
+        UITableViewCell *textFieldCell = [tableView dequeueReusableCellWithIdentifier:@"textFieldCell"];
+        
+        TextFieldTableViewCell *castedCell = (TextFieldTableViewCell*) textFieldCell;
+        castedCell.textField.delegate = self;
+        
+        return castedCell;
     } else {
+        UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
+        
         cell.textLabel.text = _mentors[indexPath.row];
         return cell;
     }
@@ -57,6 +55,11 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _mentors.count + 1;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return true;
 }
 
 @end
