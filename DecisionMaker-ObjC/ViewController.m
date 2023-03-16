@@ -10,7 +10,8 @@
 
 @interface ViewController ()
 
-@property NSArray<NSString*>* mentors;
+@property NSArray<NSString*>* choices;
+@property UITableView* tableview;
 
 @end
 
@@ -19,26 +20,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _mentors = @[@"Zoe", @"Tom", @"Tariq", @"Ty", @"Cory"];
+    _choices = @[@"Tacos", @"Pizza", @"Burger"];
     
-    UITableView *tableView = [[UITableView alloc] init];
-    tableView.delegate = self;
-    tableView.dataSource = self;
-    tableView.translatesAutoresizingMaskIntoConstraints = false;
+    _tableview = [[UITableView alloc] init];
+    _tableview.delegate = self;
+    _tableview.dataSource = self;
+    _tableview.translatesAutoresizingMaskIntoConstraints = false;
     
-    [self.view addSubview:tableView];
+    [self.view addSubview:_tableview];
 
-    [tableView.topAnchor constraintEqualToAnchor: (self.view).topAnchor].active = true;
-    [tableView.leadingAnchor constraintEqualToAnchor: (self.view).leadingAnchor].active = true;
-    [tableView.bottomAnchor constraintEqualToAnchor: (self.view).bottomAnchor].active = true;
-    [tableView.trailingAnchor constraintEqualToAnchor: (self.view).trailingAnchor].active = true;
+    [_tableview.topAnchor constraintEqualToAnchor: (self.view).topAnchor].active = true;
+    [_tableview.leadingAnchor constraintEqualToAnchor: (self.view).leadingAnchor].active = true;
+    [_tableview.bottomAnchor constraintEqualToAnchor: (self.view).bottomAnchor].active = true;
+    [_tableview.trailingAnchor constraintEqualToAnchor: (self.view).trailingAnchor].active = true;
     
-    [tableView registerNib: [UINib nibWithNibName:@"TextFieldTableViewCell" bundle:nil] forCellReuseIdentifier:@"textFieldCell"];
+    [_tableview registerNib: [UINib nibWithNibName:@"TextFieldTableViewCell" bundle:nil] forCellReuseIdentifier:@"textFieldCell"];
 }
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    if(indexPath.row == _mentors.count) {
+    if(indexPath.row == _choices.count) {
         UITableViewCell *textFieldCell = [tableView dequeueReusableCellWithIdentifier:@"textFieldCell"];
         
         TextFieldTableViewCell *castedCell = (TextFieldTableViewCell*) textFieldCell;
@@ -48,17 +49,22 @@
     } else {
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
         
-        cell.textLabel.text = _mentors[indexPath.row];
+        cell.textLabel.text = _choices[indexPath.row];
         return cell;
     }
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _mentors.count + 1;
+    return _choices.count + 1;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
+//    [_choices addObject:textField.text];
+    _choices = [_choices arrayByAddingObject:textField.text];
+    
+    textField.text = @"";
+    
+    [_tableview reloadData];
     return true;
 }
 
