@@ -25,8 +25,7 @@
     self.title = @"Decision Maker";
     self.navigationController.navigationBar.prefersLargeTitles = true;
 
-    _choices = [[NSMutableArray<NSString *> alloc] initWithCapacity:3];
-    [_choices addObjectsFromArray:@[@"Tacos", @"Pizza", @"Burger"]];
+    _choices = [[NSMutableArray<NSString *> alloc] initWithCapacity:0];
     
     _tableview = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStyleInsetGrouped];
     _tableview.delegate = self;
