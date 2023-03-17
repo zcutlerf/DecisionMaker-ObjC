@@ -6,8 +6,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TextFieldTableViewCell.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, AddButtonDelegate>
 
 @end
 

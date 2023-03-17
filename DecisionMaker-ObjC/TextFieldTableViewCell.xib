@@ -2,7 +2,9 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,23 +19,36 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G8y-O1-tv2">
-                        <rect key="frame" x="20" y="10" width="280" height="24"/>
+                        <rect key="frame" x="20.000000000000014" y="10" width="230.33333333333337" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Me6-9Q-hjw">
+                        <rect key="frame" x="270.33333333333331" y="5" width="49.666666666666686" height="34"/>
+                        <buttonConfiguration key="configuration" style="plain">
+                            <imageReference key="image" image="plus.circle.fill" catalog="system" renderingMode="original"/>
+                        </buttonConfiguration>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="G8y-O1-tv2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="5Im-sc-fnC"/>
+                    <constraint firstItem="Me6-9Q-hjw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="78M-8k-0Vb"/>
                     <constraint firstItem="G8y-O1-tv2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="BIV-Mv-dTY"/>
-                    <constraint firstAttribute="trailing" secondItem="G8y-O1-tv2" secondAttribute="trailing" constant="20" id="S4Y-MW-k6R"/>
+                    <constraint firstAttribute="trailing" secondItem="Me6-9Q-hjw" secondAttribute="trailing" id="INS-DU-lnL"/>
                     <constraint firstAttribute="bottom" secondItem="G8y-O1-tv2" secondAttribute="bottom" constant="10" id="X1J-8f-4Sq"/>
+                    <constraint firstItem="Me6-9Q-hjw" firstAttribute="leading" secondItem="G8y-O1-tv2" secondAttribute="trailing" constant="20" id="hOx-tU-VTy"/>
+                    <constraint firstAttribute="bottom" secondItem="Me6-9Q-hjw" secondAttribute="bottom" constant="5" id="vyP-f0-mcv"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="addButton" destination="Me6-9Q-hjw" id="61S-vi-H1z"/>
                 <outlet property="textField" destination="G8y-O1-tv2" id="BxE-ZV-XUX"/>
             </connections>
             <point key="canvasLocation" x="62.595419847328245" y="19.718309859154932"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
+    </resources>
 </document>

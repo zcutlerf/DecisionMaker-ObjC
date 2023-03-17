@@ -8,6 +8,7 @@
 #import "TextFieldTableViewCell.h"
 
 @implementation TextFieldTableViewCell
+@synthesize delegate;
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -15,6 +16,9 @@
     [_textField setPlaceholder:@"New choice"];
     [_textField setFont: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]];
     _textField.adjustsFontForContentSizeCategory = true;
+    [_textField becomeFirstResponder];
+    
+    [_addButton addTarget:self action:@selector(addItem:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -22,5 +26,10 @@
 
     // Configure the view for the selected state
 }
+
+- (void) addItem:(UIButton *) sender {
+    [self.delegate addItem:self];
+}
+
 
 @end
