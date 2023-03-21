@@ -51,6 +51,8 @@
     
     [_decideButton.bottomAnchor constraintEqualToAnchor: (self.view).layoutMarginsGuide.bottomAnchor].active = true;
     [_decideButton.centerXAnchor constraintEqualToAnchor: (self.view).centerXAnchor].active = true;
+    _decideButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleTitle3];
+    _decideButton.titleLabel.adjustsFontForContentSizeCategory = true;
     
     _alertController = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* okButton = [UIAlertAction actionWithTitle:@"Let's do it!" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
@@ -74,6 +76,8 @@
         UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
         
         cell.textLabel.text = _choices[indexPath.row];
+        cell.textLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        cell.textLabel.adjustsFontForContentSizeCategory = true;
         return cell;
     }
 }
