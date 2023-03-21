@@ -19,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D2ADE9829C4FCEC00FA7BFD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5D4152CA29BF682C008CD441 /* DecisionMaker-ObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DecisionMaker-ObjC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4152CD29BF682C008CD441 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5D4152CE29BF682C008CD441 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -50,6 +51,7 @@
 		5D4152C129BF682C008CD441 = {
 			isa = PBXGroup;
 			children = (
+				5D2ADE9829C4FCEC00FA7BFD /* README.md */,
 				5D4152CC29BF682C008CD441 /* DecisionMaker-ObjC */,
 				5D4152CB29BF682C008CD441 /* Products */,
 			);
